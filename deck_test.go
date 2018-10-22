@@ -5,16 +5,23 @@ import "testing"
 func TestNewDeck(t *testing.T) {
 
 	d := newDeck()
+	length := 16
 
-	if len(d) != 16 {
-		t.Errorf("Expected deck length of 16, but got %v", len(d))
+	if len(d) != length {
+		t.Errorf("Expected deck length of %v, but got %v", length, len(d))
 	}
 
-	if d[0] != "Ace of Spades" {
-		t.Errorf("Expected first card Ace of Spades, but got %v", d[0])
+	card := "Ace of Spades"
+	actualCard := d[0]
+
+	if actualCard != card {
+		t.Errorf("Expected first card %v, but got %v",card, actualCard)
 	}
 
-	if d[len(d) - 1] != "Four of Clubs" {
-		t.Errorf("Expected last card Four of Clubs, but got %v", d[len(d) - 1])
+	card = "Four of Clubs"
+	actualCard = d[len(d) - 1]
+
+	if actualCard != card {
+		t.Errorf("Expected last card %v, but got %v", card, actualCard)
 	}
 }
